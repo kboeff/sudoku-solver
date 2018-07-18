@@ -30,3 +30,34 @@ const perceptron = (threshold, inputs) => {
 };
 
 perceptron(bias, input);
+
+
+// ------ Chapter 1 
+
+/* --- sigmoid neuron ---- 
+ x1 ---\
+	    \
+ x2 ----(  ) --> output
+	    /
+ x3--- /
+ 
+ Same as perceptron, but output is floating point number between 0 and 1
+ sigma(w.x + b) = 1 / ( 1 + exp ( -sum(w.x - b) ) )
+ 
+*/
+
+// get some user input
+const input = [{ isTrue: true, weight: 4 }, { isTrue: false, weight: 2 }, { isTrue: true, weight: 2 }];
+const bias = -5;
+
+const perceptron = (threshold, inputs) => {
+	let sum = 0;
+	for (let i = 0; i < inputs.length; i++) {
+		if(inputs[i].isTrue) 
+			sum += inputs[i].weight;
+	}
+	let sigma = 1 / (1 + Math.exp(-sum - bias));
+	return sigma;
+};
+
+perceptron(bias, input);
