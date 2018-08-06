@@ -19,6 +19,7 @@ var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
 const getId = (id) => {
 	var myImage = document.getElementById(id);
+	myImage.crossOrigin = "Anonymous";
 
 	if(myImage.height === 0) {
 		myImage.height = myImage.naturalHeight;
