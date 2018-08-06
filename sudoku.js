@@ -18,11 +18,29 @@ let img = '';
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
 const getId = (id) => {
+	var myImage = document.getElementById(id);
+
+	if(myImage.height === 0) {
+		myImage.height = myImage.naturalHeight;
+	}
+
+	if(myImage.width === 0) {
+		myImage.width = myImage.naturalWidth;
+	}
+
+	Tesseract.recognize(myImage, {
+		lang: 'equ',
+		tessedit_char_blacklist: 'I'
+	})
+	.then(function(result){
+		console.log(result)
+	})
+	
 	img = document.getElementById(id);
 	modal.style.display = "block";
     modalImg.src = img.src;
     captionText.innerHTML = img.alt;
-    console.log(modal.style.display, modalImg, captionText.innerHTML)
+    //console.log(modal.style.display, modalImg, captionText.innerHTML)
 	
 }
 
@@ -33,20 +51,4 @@ span.onclick = function() {
   modal.style.display = "none";
 }
 
-var myImage = document.getElementById("myImg10");
 
-if(myImage.height === 0) {
-	myImage.height = myImage.naturalHeight;
-}
-
-if(myImage.width === 0) {
-	myImage.width = myImage.naturalWidth;
-}
-
-Tesseract.recognize(myImage, {
-    lang: 'equ',
-    tessedit_char_blacklist: 'I'
-})
-.then(function(result){
-    console.log(result)
-})
