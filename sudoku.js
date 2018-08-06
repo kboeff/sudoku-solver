@@ -33,7 +33,7 @@ const getId = (id) => {
 		lang: 'eng',
 	})
 	.then(function(result){
-		console.log(result.text)
+		console.log(result)
 	})
 	
 	img = document.getElementById(id);
