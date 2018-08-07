@@ -12,6 +12,8 @@ const uploadImage = () => {
 
 		const video = document.querySelector('video');
 		
+		alert('ready to stream');
+		
 		navigator.mediaDevices.getUserMedia(constraints).
 		  then((stream) => {video.srcObject = stream});
 	  
@@ -49,7 +51,8 @@ const getId = (id) => {
 	}
 
 	Tesseract.recognize(myImage, {
-		lang: 'eng'
+		lang: 'equ',
+		tessedit_char_blacklist: 'I'
 	})
 	.then(function(result){
 		console.log(result)
