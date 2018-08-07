@@ -49,8 +49,7 @@ const getId = (id) => {
 	}
 
 	Tesseract.recognize(myImage, {
-		lang: 'equ',
-		tessedit_char_blacklist: 'I'
+		lang: 'eng'
 	})
 	.then(function(result){
 		console.log(result)
