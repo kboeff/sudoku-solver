@@ -1,6 +1,25 @@
 const uploadImage = () => {
-	alert("uploader...")
+	function hasGetUserMedia() {
+	  return !!(navigator.mediaDevices &&
+		navigator.mediaDevices.getUserMedia);
+	}
+
+	if (hasGetUserMedia()) {
+	  // Good to go!
+		const constraints = {
+			video: true
+		};
+
+		const video = document.querySelector('video');
+		
+		navigator.mediaDevices.getUserMedia(constraints).
+		  then((stream) => {video.srcObject = stream});
+	  
+	} else {
+	  alert('getUserMedia() is not supported by your browser');
+	}
 }
+
 
 const viewSelector = () => {
 	alert("select views...")
@@ -19,7 +38,7 @@ var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
 const getId = (id) => {
 	var myImage = document.getElementById(id);
-	myImage.crossOrigin = "Anonymous";
+	myImage.setAttribute('crossOrigin', '');
 
 	if(myImage.height === 0) {
 		myImage.height = myImage.naturalHeight;
@@ -30,16 +49,18 @@ const getId = (id) => {
 	}
 
 	Tesseract.recognize(myImage, {
-		lang: 'eng',
+		lang: 'equ',
+		tessedit_char_blacklist: 'I'
 	})
 	.then(function(result){
 		console.log(result)
 	})
 	
-	img = document.getElementById(id);
+	// img = document.getElementById(id);
+	
 	modal.style.display = "block";
-    modalImg.src = img.src;
-    captionText.innerHTML = img.alt;
+    modalImg.src = myImage.src;
+    captionText.innerHTML = myImage.alt;
     //console.log(modal.style.display, modalImg, captionText.innerHTML)
 	
 }
