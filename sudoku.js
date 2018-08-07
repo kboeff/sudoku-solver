@@ -54,15 +54,10 @@ const getId = (id) => {
 		lang: 'eng'
 	})
 	.then(function(result){
+		modal.style.display = "block";
+    		modalImg.src = myImage.src;
 		captionText.innerHTML = result.text;
 	})
-	
-	// img = document.getElementById(id);
-	
-	modal.style.display = "block";
-    	modalImg.src = myImage.src;
-    // captionText.innerHTML = result.text;
-    // console.log(modal.style.display, modalImg, captionText.innerHTML)
 	
 }
 
