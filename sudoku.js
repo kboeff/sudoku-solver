@@ -62,7 +62,7 @@ const getId = (id) => {
 	
 	modal.style.display = "block";
     modalImg.src = myImage.src;
-    captionText.innerHTML = myImage.alt;
+    captionText.innerHTML = result.text;
     //console.log(modal.style.display, modalImg, captionText.innerHTML)
 	
 }
