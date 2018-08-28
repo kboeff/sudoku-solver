@@ -59,7 +59,7 @@ const getId = (id) => {
 	addBtn.style.zIndex = "-1";
 
 	
-	esseract.recognize(myImage, {
+	Tesseract.recognize(myImage, {
 		lang: 'eng'
 	})
 	.then(function(result){
