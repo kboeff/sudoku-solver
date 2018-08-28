@@ -49,15 +49,25 @@ const getId = (id) => {
 	if(myImage.width === 0) {
 		myImage.width = myImage.naturalWidth;
 	}
+	
+	modal.style.display = "block";
+	captionText.innerHTML = "Loading, please wait.";
 
 	Tesseract.recognize(myImage, {
 		lang: 'eng'
 	})
 	.then(function(result){
 		modal.style.display = "block";
-    		modalImg.src = myImage.src;
+		modalImg.src = myImage.src;
 		captionText.innerHTML = result.text;
 	})
+	
+	// img = document.getElementById(id);
+	
+	modal.style.display = "block";
+    modalImg.src = myImage.src;
+    
+    //console.log(modal.style.display, modalImg, captionText.innerHTML)
 	
 }
 
@@ -67,5 +77,3 @@ var span = document.getElementsByClassName("close")[0];
 span.onclick = function() { 
   modal.style.display = "none";
 }
-
-
