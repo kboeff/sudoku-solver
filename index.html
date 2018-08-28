@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<title>Sudoku Solver</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	
@@ -9,14 +13,20 @@
 
 	<div class="bg">
 		<div class="container">
-			<button id="upload" onclick="uploadImage()">Upload</button>
+			<div class="input-group mb-3">
+				<input type="text" class="form-control" placeholder="Image URL" aria-label="Image Url" aria-describedby="basic-addon2">
+				<div class="input-group-append">
+					<button class="btn btn-outline-secondary" type="button" id="add-btn" onclick="getURL()">Add</button>
+				</div>
+			</div>
+			
 			
 		</div>
 
 		<div class="img-container">
-			<img src='res/sudoku1.jpg' id="myImg08" onClick="getId(this.id);" alt="Sudoku1">
-			<img src='res/sudoku2.jpg' id="myImg09" onClick="getId(this.id);" alt="Sudoku2">
-			<img src='res/sudoku2.png' id="myImg10" onClick="getId(this.id);" alt="Sudoku3">
+			<img class="border" src='res/sudoku1.jpg' id="myImg08" onClick="getId(this.id);" alt="Sudoku1">
+			<img class="border" src='res/sudoku2.jpg' id="myImg09" onClick="getId(this.id);" alt="Sudoku2">
+			<img class="border" src='res/sudoku2.png' id="myImg10" onClick="getId(this.id);" alt="Sudoku3">
 		</div>
 		<!-- The Modal -->
 		<div id="myModal" class="modal">
@@ -30,7 +40,10 @@
 		
 		
 	</div>
-	
+	<!-- Bootstrap CDN -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<!-- Tesseract OCR API -->
 	<script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
 	<script src="sudoku.js"></script>
