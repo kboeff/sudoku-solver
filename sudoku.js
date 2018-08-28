@@ -1,34 +1,5 @@
 const uploadImage = () => {
-	function hasGetUserMedia() {
-	  return !!(navigator.mediaDevices &&
-		navigator.mediaDevices.getUserMedia);
-	}
-
-	if (hasGetUserMedia()) {
-	  // Good to go!
-		const constraints = {
-			video: true
-		};
-
-		const video = document.querySelector('video');
-		
-		alert('ready to stream');
-		
-		navigator.mediaDevices.getUserMedia(constraints).
-		  then((stream) => {video.srcObject = stream});
-	  
-	} else {
-	  alert('getUserMedia() is not supported by your browser');
-	}
-}
-
-
-const viewSelector = () => {
-	alert("select views...")
-}
-
-const makeCollage = () => {
-	alert("make collage...")
+	
 }
 
 // Get the modal
