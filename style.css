@@ -1,18 +1,17 @@
 body, html {
     height: 100%;
     margin: 0;
-    font-family: Tahoma, Verdana;
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.bg { 
-    /* background-image: url("res/background-image.jpg");
-    background-position: center;
-    background-repeat: repeat; */
-    background-color: #565661;
- 
-}
 
 .container {
+	margin-top: 20px;
 	display: flex;
 	align-content: flex-start;
 	justify-content: center;
@@ -20,6 +19,7 @@ body, html {
 
 .img-container {
 	display: flex;
+	border: 1px 
 	flex-wrap: wrap;
 	justify-content: center;
 }
@@ -35,39 +35,6 @@ body, html {
 	transform: scale(1.05);
 }
 
-button {
-	width: 100px;
-	background-color: #000000;
-	color: #7F7E7E;
-	border: none;
-	border-radius: 12px;
-	padding: 7px;
-	margin: 5px;
-	margin-top: 10px;
-	font-weight: bold; 
-}
-
-button:hover {
-	box-shadow: 1px 1px 1px #7F7E7E;
-	color: #FFFFFF;
-}
-
-button:focus {
-	outline: 0;
-}
-
-a {
-	color: #000000;
-}
-
-footer { 
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	text-align: center;
-	font-size: 75%;
-	width: 100%;
-}
 
 /* The Modal (background) */
 .modal {
