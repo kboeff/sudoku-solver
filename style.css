@@ -19,7 +19,7 @@ body, html {
 
 .img-container {
 	display: flex;
-	border: 1px 
+	border: 1px;
 	flex-wrap: wrap;
 	justify-content: center;
 }
