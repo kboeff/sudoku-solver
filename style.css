@@ -9,6 +9,9 @@ body, html {
     -webkit-tap-highlight-color: transparent;
 }
 
+.jumbotron {
+	background-color: #FFFFAA;	
+}
 
 .container {
 	margin-top: 20px;
