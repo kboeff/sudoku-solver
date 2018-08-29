@@ -12,9 +12,6 @@ body, html {
 
 .container {
 	margin-top: 20px;
-	display: flex;
-	align-content: flex-start;
-	justify-content: center;
 }
 
 .img-container {
