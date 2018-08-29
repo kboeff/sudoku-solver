@@ -10,6 +10,7 @@ body, html {
 }
 
 .jumbotron {
+	background-image: url("res/bg.jpg");
 	background-color: #FFFFAA;	
 }
 
