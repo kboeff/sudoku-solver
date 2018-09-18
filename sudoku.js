@@ -1,6 +1,8 @@
+var globalIdCount = 0;
+
 const getURL = () => {
 	let imgURL = document.querySelectorAll("input")[0].value;
-	console.log(imgURL);
+	
 	let container = document.getElementsByClassName("img-container")[0];
 	if(imgURL.length) {
 		let newImg = document.createElement('img');
@@ -18,7 +20,8 @@ const getURL = () => {
 		newImg.setAttributeNode(attWidth);
 		
 		let attId = document.createAttribute("id");
-		attId.value = "myImg" + 5;
+		attId.value = "newImg" + globalIdCount;
+		globalIdCount++;
 		newImg.setAttributeNode(attId);
 		
 		let attClick = document.createAttribute("onClick");
