@@ -1,7 +1,12 @@
-var globalIdCount = 0;
+var globalIdCount = 0; // adding unique integer to IDs to uploaded images
 
-const getURL = () => {
+// Can be called by the URL in the example or the "Add" button
+const getURL = function(element) {
 	let imgURL = document.querySelectorAll("input")[0].value;
+	if(arguments.length) {
+		imgURL = element.innerHTML;
+		console.log(imgURL);
+	}
 	
 	let container = document.getElementsByClassName("img-container")[0];
 	if(imgURL.length) {
@@ -65,11 +70,13 @@ const getId = (id) => {
 	Tesseract.recognize(myImage, {
 		lang: 'eng'
 	})
-	.then(function(result){
+	.catch(err => alert(err))
+	.then(result => {
 		modal.style.display = "block";
 		modalImg.src = myImage.src;
 		captionText.innerHTML = result.text;
 	})
+	.finally(resultOrError => console.log('oops!', resultOrError))
 
 	
 }
